@@ -41,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget buildSignUpTextField() {
     return Container(
       width: 300,
-      height: 190,
+      height: 360,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(8)),
           color: Colors.white),
@@ -49,6 +49,27 @@ class _SignUpPageState extends State<SignUpPage> {
         key: _SignInFormKey,
         child: Column(
           children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 25, right: 25, top: 20, bottom: 20),
+                child: new TextFormField(
+                  decoration: new InputDecoration(
+                      icon: new Icon(
+                        Icons.person,
+                        color: Colors.black,
+                      ),
+                      hintText: "Name",
+                      border: InputBorder.none),
+                  style: new TextStyle(fontSize: 16, color: Colors.black),
+                ),
+              ),
+            ),
+            Container(
+              height: 1,
+              width: 250,
+              color: Colors.green[400],
+            ),
             Flexible(
               child: Padding(
                 padding:
@@ -79,43 +100,59 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 250,
               color: Colors.green[400],
             ),
-            Flexible(
+            Expanded(
               child: Padding(
-                padding: EdgeInsets.only(left: 25, right: 25, top: 20),
-                child: TextFormField(
-                  focusNode: passwordFocusNode,
-                  decoration: InputDecoration(
-                    icon: Icon(
+                padding: const EdgeInsets.only(
+                    left: 25, right: 25, top: 20, bottom: 20),
+                child: new TextFormField(
+                  decoration: new InputDecoration(
+                    icon: new Icon(
                       Icons.lock,
                       color: Colors.black,
                     ),
                     hintText: "Password",
                     border: InputBorder.none,
-                    suffix: IconButton(
-                      icon: Icon(
-                        Icons.remove_red_eye,
-                        color: Colors.black,
-                      ),
-                      onPressed: _showPassword,
-                    ),
+                    suffixIcon: new IconButton(
+                        icon: new Icon(
+                          Icons.remove_red_eye,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {}),
                   ),
-                  obscureText: !isShowPassword,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                  ),
-                  validator: (value) {
-                    /// 校验密码
-                    if (value == null || value.isEmpty || value.length < 6) {
-                      return "Password length must longer than 6!";
-                    }
-                  },
-                  onSaved: (value) {
-                    /// TODO --- save
-                  },
+                  obscureText: true,
+                  style: new TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
-            )
+            ),
+            Container(
+              height: 1,
+              width: 250,
+              color: Colors.green[400],
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 25, right: 25, top: 20, bottom: 20),
+                child: new TextFormField(
+                  decoration: new InputDecoration(
+                    icon: new Icon(
+                      Icons.lock,
+                      color: Colors.black,
+                    ),
+                    hintText: "Confirm Passowrd",
+                    border: InputBorder.none,
+                    suffixIcon: new IconButton(
+                        icon: new Icon(
+                          Icons.remove_red_eye,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {}),
+                  ),
+                  obscureText: true,
+                  style: new TextStyle(fontSize: 16, color: Colors.black),
+                ),
+              ),
+            ),
           ],
         ),
       ),
