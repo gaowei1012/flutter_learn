@@ -4,6 +4,7 @@ import 'package:music/widget/checbox_page.dart';
 import 'package:music/widget/container_page.dart';
 import 'package:music/widget/image_page.dart';
 import 'package:music/widget/login_base_page.dart';
+import 'package:music/widget/pading_page.dart';
 import 'package:music/widget/row_column_wrap.dart';
 import 'package:music/widget/scaffold_tabbar_page.dart';
 import 'package:music/widget/swiper_page.dart';
@@ -72,6 +73,10 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 onPressed: _goToLoginPage,
                 child: Text('login'),
+              ),
+              RaisedButton(
+                onPressed: _goToPadding,
+                child: Text('padding'),
               )
             ],
           )
@@ -80,49 +85,54 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future _goToContainer() {
+  _goToContainer() {
     /// 路由跳转
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => ContainerPage()));
   }
 
-  Future _goToScaffold() {
+  _goToScaffold() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => ScaffoldTabbarPage()));
   }
 
-  Future _goRowColumnWrap() {
+  _goRowColumnWrap() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => RowColumnWrapPage()));
   }
 
-  Future _goToImagePage() {
+  _goToImagePage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => ImagePage()));
   }
 
-  Future _goToSwiperPage() {
+  _goToSwiperPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SwiperPage()));
   }
 
-  Future _goToCheckBox() {
+  _goToCheckBox() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => CheckBoxPage()));
   }
 
-  Future _goToTextInput() {
+  _goToTextInput() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => TextInputFormPage()));
   }
 
-  Future _goToLogin() {
+  _goToLogin() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginBasePage()));
   }
 
-  Future _goToLoginPage() {
+  _goToLoginPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginPage()));
+  }
+
+  _goToPadding() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PaddingPage()));
   }
 }
