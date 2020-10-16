@@ -5,6 +5,7 @@ import 'package:music/widget/constrained_page.dart';
 import 'package:music/widget/container_page.dart';
 import 'package:music/widget/decoratedbox_page.dart';
 import 'package:music/widget/image_page.dart';
+import 'package:music/widget/listview_page.dart';
 import 'package:music/widget/login_base_page.dart';
 import 'package:music/widget/pading_page.dart';
 import 'package:music/widget/row_column_wrap.dart';
@@ -87,6 +88,10 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 onPressed: _scrollview,
                 child: Text('scroll view'),
+              ),
+              RaisedButton(
+                onPressed: _listview,
+                child: Text('list view'),
               )
             ],
           )
@@ -159,5 +164,10 @@ class _HomePageState extends State<HomePage> {
   _scrollview() {
     Navigator.push(context,
         MaterialPageRoute(builder: (context) => SingleChinldScrollViewPage()));
+  }
+
+  _listview() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ListViewPage()));
   }
 }
