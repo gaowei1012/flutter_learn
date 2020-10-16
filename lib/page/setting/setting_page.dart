@@ -6,16 +6,11 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
-  final _title = '关于';
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_title),
-      ),
-      body: Container(
-        child: Text(_title),
+    return SafeArea(
+      child: Container(
+        child: Text('setting'),
       ),
     );
   }

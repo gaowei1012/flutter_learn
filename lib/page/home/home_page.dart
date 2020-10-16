@@ -18,15 +18,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _title = 'Material';
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_title),
-      ),
-      body: Column(
+    return SafeArea(
+      child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Wrap(
