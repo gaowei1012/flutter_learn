@@ -9,6 +9,7 @@ import 'package:music/widget/login_base_page.dart';
 import 'package:music/widget/pading_page.dart';
 import 'package:music/widget/row_column_wrap.dart';
 import 'package:music/widget/scaffold_tabbar_page.dart';
+import 'package:music/widget/singlechildscrollview.dart';
 import 'package:music/widget/swiper_page.dart';
 import 'package:music/widget/textinput_form_page.dart';
 
@@ -82,6 +83,10 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 onPressed: _decration,
                 child: Text('box decration'),
+              ),
+              RaisedButton(
+                onPressed: _scrollview,
+                child: Text('scroll view'),
               )
             ],
           )
@@ -149,5 +154,10 @@ class _HomePageState extends State<HomePage> {
   _decration() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => DecoratedBoxPage()));
+  }
+
+  _scrollview() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => SingleChinldScrollViewPage()));
   }
 }
