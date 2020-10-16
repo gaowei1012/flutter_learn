@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music/login/ui/login_page.dart';
 import 'package:music/widget/checbox_page.dart';
+import 'package:music/widget/constrained_page.dart';
 import 'package:music/widget/container_page.dart';
 import 'package:music/widget/image_page.dart';
 import 'package:music/widget/login_base_page.dart';
@@ -77,6 +78,10 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 onPressed: _goToPadding,
                 child: Text('padding'),
+              ),
+              RaisedButton(
+                onPressed: _constrinace,
+                child: Text('constrinace'),
               )
             ],
           )
@@ -134,5 +139,10 @@ class _HomePageState extends State<HomePage> {
   _goToPadding() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => PaddingPage()));
+  }
+
+  _constrinace() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ConstrainedBoxPage()));
   }
 }
