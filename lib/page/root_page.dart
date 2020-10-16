@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music/page/about/about_page.dart';
+import 'package:music/page/drawer_page.dart';
 import 'package:music/page/home/home_page.dart';
 import 'package:music/page/setting/setting_page.dart';
 
@@ -24,6 +25,9 @@ class _RootPageState extends State<RootPage> {
       appBar: AppBar(
         title: Text('Mateial App'),
       ),
+      drawer: DrawerPage(),
+
+      /// 底部 bottom
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -35,6 +39,8 @@ class _RootPageState extends State<RootPage> {
         fixedColor: Colors.blue,
         onTap: _onTap,
       ),
+
+      /// 内容显示
       body: list[_currentIndex],
     );
   }
