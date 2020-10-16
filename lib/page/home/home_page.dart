@@ -3,6 +3,7 @@ import 'package:music/login/ui/login_page.dart';
 import 'package:music/widget/checbox_page.dart';
 import 'package:music/widget/constrained_page.dart';
 import 'package:music/widget/container_page.dart';
+import 'package:music/widget/decoratedbox_page.dart';
 import 'package:music/widget/image_page.dart';
 import 'package:music/widget/login_base_page.dart';
 import 'package:music/widget/pading_page.dart';
@@ -82,6 +83,10 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 onPressed: _constrinace,
                 child: Text('constrinace'),
+              ),
+              RaisedButton(
+                onPressed: _decration,
+                child: Text('box decration'),
               )
             ],
           )
@@ -144,5 +149,10 @@ class _HomePageState extends State<HomePage> {
   _constrinace() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => ConstrainedBoxPage()));
+  }
+
+  _decration() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DecoratedBoxPage()));
   }
 }
